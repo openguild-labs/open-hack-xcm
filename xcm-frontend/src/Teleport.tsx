@@ -38,7 +38,7 @@ export const Teleport: React.FC = () => {
   const teleport = (to: "para" | "relay") => {
     teleportFns[to](account.address, ref.current)
       .signSubmitAndWatch(account.polkadotSigner)
-      .subscribe((x) => {
+      .subscribe((x: any) => {
         setTxStatus(x)
         if (x.type === "finalized")
           setTimeout(() => {

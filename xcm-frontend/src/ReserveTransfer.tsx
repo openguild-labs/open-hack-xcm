@@ -33,7 +33,7 @@ export const ReserveTransfer: React.FC = () => {
   const teleport = () => {
     reserveTransferToParachain(account.address, ref.current)
       .signSubmitAndWatch(account.polkadotSigner)
-      .subscribe((x) => {
+      .subscribe((x: any) => {
         setTxStatus(x);
         if (x.type === "finalized")
           setTimeout(() => {
