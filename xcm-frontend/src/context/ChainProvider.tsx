@@ -1,10 +1,14 @@
 import { PolkadotClient } from "polkadot-api";
 import { createContext, useContext } from "react";
-import { PaseoAssetHubChainApi, PaseoRelayChainApi } from "../api";
+import {
+  PaseoAssetHubChainApi,
+  PaseoPeopleChainApi,
+  PaseoRelayChainApi,
+} from "../api";
 
 export const chainCtx = createContext<{
   client: PolkadotClient;
-  api: PaseoAssetHubChainApi | PaseoRelayChainApi;
+  api: PaseoAssetHubChainApi | PaseoPeopleChainApi | PaseoRelayChainApi;
 } | null>(null);
 export const useChain = () => useContext(chainCtx)!;
 
