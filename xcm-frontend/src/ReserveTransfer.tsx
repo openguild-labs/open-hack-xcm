@@ -46,6 +46,13 @@ export const ReserveTransfer: React.FC = () => {
     <div>
       <h2>Reserve Transfer: </h2>
       <button onClick={() => teleport()}>↓ To ParaChain ↓</button>
+      <input
+        type="number"
+        onChange={(e) => {
+          ref.current = BigInt(Number(e.target.value) * 10 ** decimals);
+        }}
+        defaultValue={0}
+      />
       <TxStatus status={txStatus} />
     </div>
   );
